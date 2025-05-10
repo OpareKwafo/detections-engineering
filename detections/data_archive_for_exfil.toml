@@ -8,6 +8,7 @@ description = """This alert looks for .zip files being created in a file path co
 from = "now-6m"
 name = "Data Archive for Potential Exfil"
 severity = "medium"
+risk_score = 50
 type = "query"
 rule_id = "00000000-0000-0000-0000-000000000002"
 query = '''

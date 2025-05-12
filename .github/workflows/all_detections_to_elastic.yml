@@ -1,0 +1,13 @@
+name: All Detections To Elastic
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  toml-validation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: python development/toml_to_json.py

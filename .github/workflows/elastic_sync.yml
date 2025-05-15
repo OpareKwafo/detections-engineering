@@ -4,7 +4,6 @@ on:
       - main
     paths:
       - '**.toml'
-      - 'detections\**'
   workflow_dispatch:
 
 jobs:
@@ -16,9 +15,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0 
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.11.4'
 
       - name: Get Changed Files
         id: changed-files
@@ -29,5 +25,4 @@ jobs:
           ELASTIC_KEY: ${{ secrets.ELASTIC_KEY }}
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          pip install requests
           python development/update_alert.py

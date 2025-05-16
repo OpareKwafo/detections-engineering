@@ -1,0 +1,18 @@
+name: Updating Detections
+
+on:
+  push:
+    path:
+      '**.toml'
+  workflow_dispatch:
+
+jobs:
+  elastic-detections-update:
+    runs-on: ubuntu-latest
+    env:
+      ELASTIC_KEY: ${{ secrets.ELASTIC_KEY }}
+
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: python development/toml_to_json.py

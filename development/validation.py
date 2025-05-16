@@ -19,6 +19,13 @@ for root, dirs, files in os.walk("/detections"):
                 present_fields = []
                 missing_fields =[]
 
+                try:
+                    if alert['metadata']['creation_date']:
+                        pass 
+                except:
+                    print("The metadata table does not contain a creation_date on: " + full_path)
+                    failure = 1
+
                 if alert['rule']['type'] == "query":
                     required_fields = ["description", "name", "risk_score", "severity", "type", "query"]  
                 elif alert['rule']['type'] == "eql": #event correlation alert

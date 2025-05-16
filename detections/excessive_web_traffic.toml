@@ -15,7 +15,7 @@ event.dataset : "zeek.http"
 
 [rule.threshold]
 field = ["source.ip"]
-value = 1000
+value = 10000
 
 [[rule.threat]]
 framework = "MITRE ATT&CK"

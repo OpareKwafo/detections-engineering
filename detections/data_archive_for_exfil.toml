@@ -7,6 +7,7 @@ author = ["Anthony Isherwood"]
 description = """This alert looks for .zip files being created in a file path containing Windows\\Temp."""
 from = "now-6m"
 name = "Data Archive for Potential Exfil"
+risk_score = 50
 severity = "medium"
 risk_score = 50
 type = "query"
@@ -31,6 +32,7 @@ reference = "https://attack.mitre.org/techniques/T1074/001/"
 id = "TA0009"
 name = "Collection"
 reference = "https://attack.mitre.org/tactics/TA0009/"
+
 
 
 
